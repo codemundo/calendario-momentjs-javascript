@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calendario con moment.js y JavaScript | CodeMundo</title>
+    <link rel="stylesheet" href="./css/calendar.css">
+</head>
+<body>
+    <div class="root">
+        <div class="calendar" id="calendar">
+
+        </div>
+
+        <div class="calendar" id="calendar2">
+
+        </div>
+    </div>
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
+    <script  type="text/javascript" src="./js/calendar.js"></script>
+    <script type="text/javascript">
+        let calendar = new Calendar('calendar');
+        calendar.getElement().addEventListener('change', e => {
+            console.log(calendar.value().format('LLL'));
+        });
+
+        let calendar2 = new Calendar('calendar2');
+        calendar2.getElement().addEventListener('change', e => {
+            console.log(calendar2.value().format('LLL'));
+        });
+    </script>
+</body>
+</html>
